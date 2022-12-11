@@ -1,6 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
+  mode: 'development',
+  devServer: {
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, '/dist'),
+    },
+    open: true,
+    compress: true,
+    hot: true,
+    port: 3000,
+  },
   entry: {
     main: path.resolve(__dirname, './src/index.js'),
   },
@@ -34,6 +45,11 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        test: [/\.css$/, /\.scss$/],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      
     ],
   }
 }

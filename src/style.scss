@@ -1,0 +1,9 @@
+$medium-font-size: 16px;
+$large-font-size: 25px;
+#root{
+    background-color: rgba(0, 0, 0, 0.2);
+    
+    h1{
+        font-size: $large-font-size;
+    }
+}

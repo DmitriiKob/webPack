@@ -13,7 +13,7 @@ module.exports = {
     port: 3000,
   },
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    main: path.resolve(__dirname, './src/index.ts'),
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -49,7 +49,14 @@ module.exports = {
         test: [/\.css$/, /\.scss$/],
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
-      
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   }
 }

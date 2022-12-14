@@ -11,11 +11,15 @@
     "postcss-preset-env": "^7.8.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "build": "webpack"
   }
+
 }
